@@ -5,6 +5,25 @@
 	src: url("../fonts/Inter/Inter-Medium.woff") format("woff");
 	src: url("../fonts/Inter/Inter-Medium.ttf") format("truetype");
 	font-style: normal;
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "Theater-Atlas-Deco";
+	src: url("../fonts/Theater-Atlas-Deco/Theater-Atlas-Deco.eot");
+	src: url("../fonts/Theater-Atlas-Deco/Theater-Atlas-Deco.eot?#iefix") format("embedded-opentype");
+	src: url("../fonts/Theater-Atlas-Deco/Theater-Atlas-Deco.woff") format("woff");
+	src: url("../fonts/Theater-Atlas-Deco/Theater-Atlas-Deco.ttf") format("truetype");
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Googlo";
+	src: url("../fonts/Gogol/Gogol-Regular.eot");
+	src: url("../fonts/Gogol/Gogol-Regular.eot?#iefix") format("embedded-opentype");
+	src: url("../fonts/Gogol/Gogol-Regular.woff") format("woff");
+	src: url("../fonts/Gogol/Gogol-Regular.ttf") format("truetype");
+	font-style: normal;
 }
 
 * {
@@ -34,6 +53,14 @@ body {
 a, a:hover, a:active, a:visited {
 	text-decoration: none;
 	cursor: pointer;
+}
+
+.first-font {
+	font-family: 'Theater-Atlas-Deco';
+}
+
+.second-font {
+	font-family: 'Googlo';
 }
 
 .header {
@@ -81,7 +108,7 @@ form {
 	/* overflow: visible; */
 }
 
-input[type=text] {
+input {
 	border: none;
 	border: 2px solid #bdbdbd;
 	background-color: #fafafa;
@@ -120,4 +147,107 @@ span {
 	top: -12px;
 	cursor: pointer;
 	z-index: 3;
+}
+
+/* block checkbox */
+
+.cb {
+	display: block;
+	width: 100%;
+	margin: 10px auto;
+}
+
+input[type=checkbox] {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+}
+
+.cb > div {
+	display: block;
+	background-color: aquamarine;
+	padding: 30px 30px 30px 50px;
+	border-radius: 4px;
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.cb > div * {
+	cursor: pointer;
+}
+
+.cb > div > h3 {
+	font-weight: bold;
+	margin-bottom: 2px;
+}
+
+.cb > div::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	display: block;
+	width: 0;
+	height: 100%;
+	background-color: #28d49b;
+	-webkit-transition-duration: .2s;
+	-moz-transition-duration: .2s;
+	-ms-transition-duration: .2s;
+	-o-transition-duration: .2s;
+	transition-duration: .2s;
+}
+
+.cb > input[type=checkbox]:checked + div::before {
+	width: 10px;
+}
+
+/* block radio-button */
+
+.rb {
+	display: block;
+	width: 100%;
+	margin: 10px auto;
+}
+
+input[type=radio] {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+}
+
+.rb > div {
+	display: block;
+	background-color: #efef37;
+	padding: 30px 30px 30px 50px;
+	border-radius: 4px;
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.rb * {
+	cursor: pointer;
+}
+
+.rb > div::after {
+	content: '';
+	position: absolute;
+	left: 14px;
+	top: calc(50% - 12px);
+	display: block;
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	background-color: #fafafa;
+	-webkit-transition-duration: .2s;
+	-moz-transition-duration: .2s;
+	-ms-transition-duration: .2s;
+	-o-transition-duration: .2s;
+	transition-duration: .2s;
+}
+
+.rb > input[type=radio]:checked + div::after {
+	background-color: #fa8d39;
 }
